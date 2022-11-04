@@ -2,7 +2,7 @@ const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Con
 
 const ingredientsList = document.querySelector(`#ingredients`);
 
-ingredients.forEach(function (itemName) {
+ingredients.forEach(itemName => {
     const itemEl = document.createElement(`li`);
     itemEl.className = 'item';
     itemEl.textContent = itemName;
