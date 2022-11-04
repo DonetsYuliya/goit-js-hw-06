@@ -3,17 +3,11 @@
 const items = document.querySelectorAll(`.item`);
 console.log(`Number of categories: ${items.length}`);
 
-const categoryAnimals = items[0];
-const categoryProducts = items[1];
-const categoryTechnologies = items[2];
-
 const getCategorie = categorie => {
     console.log(`Category: ${categorie.firstElementChild.textContent}`);
     console.log(`Elements: ${categorie.lastElementChild.children.length}`);
 };
-getCategorie(categoryAnimals);
-getCategorie(categoryProducts);
-getCategorie(categoryTechnologies);
+items.forEach(getCategorie);
 
 // Напиши скрипт который:
 
