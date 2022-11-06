@@ -1,13 +1,16 @@
 const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments'];
 
 const ingredientsList = document.querySelector(`#ingredients`);
+const itemEls = [];
 
-ingredients.forEach(itemName => {
+ingredients.forEach(ingredient => {
     const itemEl = document.createElement(`li`);
-    itemEl.className = 'item';
-    itemEl.textContent = itemName;
-    ingredientsList.append(itemEl);
+    itemEl.classList.add('item');
+    itemEl.textContent = ingredient;
+    itemEls.push(itemEl);
 });
+
+ingredientsList.append(...itemEls);
 
 // Напиши скрипт, который для каждого элемента массива ingredients:
 
