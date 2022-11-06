@@ -2,20 +2,11 @@
 
 const inputEl = document.querySelector('#validation-input');
 
-const validInput = () => {
-    inputEl.classList.contains('invalid')
-        ? inputEl.classList.replace('invalid', 'valid')
-        : inputEl.classList.add('valid');
-};
-
-const invalidInput = () => {
-    inputEl.classList.contains('valid')
-        ? inputEl.classList.replace('valid', 'invalid')
-        : inputEl.classList.add('invalid');
-};
-
 const validation = () => {
-    inputEl.value.length === Number(inputEl.dataset.length) ? validInput() : invalidInput();
+    inputEl.classList.remove('valid', 'invalid');
+    inputEl.value.length === Number(inputEl.dataset.length)
+        ? inputEl.classList.add('valid')
+        : inputEl.classList.add('invalid');
 };
 
 inputEl.addEventListener('blur', validation);
